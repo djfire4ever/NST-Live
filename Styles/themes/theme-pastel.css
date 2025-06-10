@@ -2,7 +2,7 @@
    🎨 THEME VARIABLES FOR PASTEL MODE
 ========================================== */
 body.theme-pastel {
-  --accent-color: #f29a9a;            /* ✅ Accent color (soft pink) */
+  --accent-color: #FFCDD2;            /* ✅ Accent color (soft pink) */
   --text-color: #333;                 /* ✅ Main text color (dark gray for readability) */
   --input-bg: #f9f9f9;                /* ✅ Light pastel background for inputs */
   --search-bg: #a0d1d1;               /* ✅ Teal pastel background for search input */
