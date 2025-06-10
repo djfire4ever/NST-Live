@@ -5,7 +5,7 @@ body.theme-pastel {
   --accent-color: #FFCDD2;            /* ✅ Accent color (soft pink) */
   --text-color: #333;                 /* ✅ Main text color (dark gray for readability) */
   --input-bg: #f9f9f9;                /* ✅ Light pastel background for inputs */
-  --search-bg: #a0d1d1;               /* ✅ Teal pastel background for search input */
+  --search-bg: #F48FB1;               /* ✅ Teal pastel background for search input */
   --background-color: #FFCDD2;        /* ✅ Light page background (lavender-pink pastel) */
   --border-color: #ddd;               /* ✅ Subtle border color for form elements/tables */
   --table-hover: #EF9A9A; /* ✅ Table row hover effect (soft pink) */
