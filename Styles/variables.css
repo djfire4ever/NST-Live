@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ===============================
    🎨 SYSTEM DEFAULT VARIABLES
 ================================== */
@@ -13,19 +12,3 @@
   --input-bg: #f8f9fa;
   --search-bg: #ffffff; */
 }
-=======
-/* ===============================
-   🎨 SYSTEM DEFAULT VARIABLES
-================================== */
-:root {
-  /* Layout Heights */
-  --header-height: 60px;
-  --footer-height: 22px;
-
-  /* Theme Defaults */
-  /*  --accent-color: #0dcaf0;         /* Bootstrap success green */
-  /* --text-color: #000000;
-  --input-bg: #f8f9fa;
-  --search-bg: #ffffff; */
-}
->>>>>>> fc285467c489024ad79f8916ecca9eda90cfaf68
