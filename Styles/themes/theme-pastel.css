@@ -8,7 +8,7 @@ body.theme-pastel {
   --search-bg: #a0d1d1;               /* ✅ Teal pastel background for search input */
   --background-color: #FFCDD2;        /* ✅ Light page background (lavender-pink pastel) */
   --border-color: #ddd;               /* ✅ Subtle border color for form elements/tables */
-  --table-hover: rgba(242, 154, 154, 0.3); /* ✅ Table row hover effect (soft pink) */
+  --table-hover: #EF9A9A; /* ✅ Table row hover effect (soft pink) */
   --nav-tab-bg: #f2d1d1;              /* ✅ Tab background (light pink) */
   --nav-tab-active-bg: #f9f9f9;       /* ✅ Active tab background (matches input) */
 }
@@ -37,7 +37,7 @@ body.theme-pastel .nav-tabs .nav-link {
 }
 
 body.theme-pastel .nav-tabs .nav-link.active {
-  background-color: var(--bs-info);   /* 🔲 Slightly darker for active tab */
+  background-color: var(--background-color);   /* 🔲 Slightly darker for active tab */
   color: #000 !important;          /* 🔷 Info blue text for active tab too */
   border-color: var(--accent-color) var(--accent-color) transparent; /* ✅ Highlighted border */
 }
