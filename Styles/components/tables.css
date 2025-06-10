@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===============================
    📋 TABLE & RESULTS STYLING
 ================================== */
@@ -18,3 +19,25 @@
 .result-box:hover th {
   background-color: rgba(25, 135, 84, 0.15) ;
 }
+=======
+/* ===============================
+   📋 TABLE & RESULTS STYLING
+================================== */
+.result-box th,
+.result-box td,
+.my-custom-table thead th {
+  background-color: var(--accent-color) ;
+  color: var(--text-color) ;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.result-box {
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.result-box:hover td,
+.result-box:hover th {
+  background-color: rgba(25, 135, 84, 0.15) ;
+}
+>>>>>>> fc285467c489024ad79f8916ecca9eda90cfaf68

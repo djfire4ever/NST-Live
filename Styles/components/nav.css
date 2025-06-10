@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===============================
    📑 NAVIGATION TABS
 ================================== */
@@ -5,3 +6,12 @@
   background-color: var(--accent-color) ;
   color: var(--text-color) ;
 }
+=======
+/* ===============================
+   📑 NAVIGATION TABS
+================================== */
+.nav-tabs .nav-link {
+  background-color: var(--accent-color) ;
+  color: var(--text-color) ;
+}
+>>>>>>> fc285467c489024ad79f8916ecca9eda90cfaf68

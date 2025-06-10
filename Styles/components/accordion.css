@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* ===============================
    ⬇️ ACCORDION OVERRIDES
 ================================== */
@@ -5,3 +6,12 @@
   position: relative;
   z-index: 2;
 }
+=======
+/* ===============================
+   ⬇️ ACCORDION OVERRIDES
+================================== */
+.accordion-button {
+  position: relative;
+  z-index: 2;
+}
+>>>>>>> fc285467c489024ad79f8916ecca9eda90cfaf68

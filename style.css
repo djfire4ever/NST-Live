@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* style.css - stripped to load modular styles */
 
 @import url('./styles/variables.css');
@@ -15,3 +16,22 @@
 @import url('./styles/themes/theme-classic.css');
 @import url('./styles/themes/theme-dark.css'); /* Default can be conditionally toggled */
 @import url('./styles/themes/theme-pastel.css');
+=======
+/* style.css - stripped to load modular styles */
+
+@import url('./styles/variables.css');
+@import url('./styles/base.css');
+@import url('./styles/layout.css');
+@import url('./styles/forms.css');
+@import url('./styles/components/toast.css');
+@import url('./styles/components/tables.css');
+@import url('./styles/components/nav.css');
+@import url('./styles/components/counter.css');
+@import url('./styles/components/accordion.css');
+@import url('./styles/components/watermark.css');
+
+/* Add themes after base styles */
+@import url('./styles/themes/theme-classic.css');
+@import url('./styles/themes/theme-dark.css'); /* Default can be conditionally toggled */
+@import url('./styles/themes/theme-pastel.css');
+>>>>>>> fc285467c489024ad79f8916ecca9eda90cfaf68
