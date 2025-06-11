@@ -6,7 +6,23 @@
   <title>Leads Manager</title>
   <script defer src="leadsform.js"></script>
 </head>
-<body class="bg-black text-white">
+<body class="theme-pastel">
+
+<!-- 💧 Watermark -->
+<div class="watermark"></div>
+
+<!-- 🔔 Toast Notifications -->
+<div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div>
+
+<!-- ⏳ Loader -->
+<div id="loadingOverlay" class="d-none">
+  <div class="text-center text-info">
+    <div class="spinner-border text-info" role="status"></div>
+    <p class="mt-2">Loading... Please wait...</p>
+  </div>
+</div>
+
+<!-- <body class="bg-black text-white"> -->
   <div class="container py-4">
     <h2 class="text-info text-center mb-4">Lead Management</h2>
 

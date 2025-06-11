@@ -8,8 +8,13 @@
 </style>
 <script src="config.js" defer></script>
 </head>
+<body class="bg-light">
+<!-- <body class="theme-pastel"> -->
 
-<!-- ✅ Toast Container -->
+<!-- 💧 Watermark -->
+<div class="watermark"></div>
+
+<!-- 🔔 Toast Notifications -->
 <div id="toastContainer" class="toast-container position-fixed top-0 end-0 p-3"></div>
 
 <!-- ⏳ Loader -->
@@ -20,15 +25,14 @@
   </div>
 </div>
 
-<body class="bg-light">
-  <div class="container py-4">
-    <h1 class="text-center mb-4">📅 FullCalendar</h1>
-    <div class="card shadow rounded-4">
-      <div class="card-body p-4">
-        <div id="calendar"></div>
-      </div>
+<div class="container py-4">
+  <h1 class="text-center mb-4">📅 FullCalendar</h1>
+  <div class="card shadow rounded-4">
+    <div class="card-body p-4">
+      <div id="calendar"></div>
     </div>
   </div>
+</div>
 
 <!-- 📌 Add/Edit Event Modal -->
 <div class="modal fade" id="addEventModal" tabindex="-1" aria-labelledby="addEventLabel" aria-hidden="true">
