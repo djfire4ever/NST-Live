@@ -13,14 +13,14 @@ const scriptURL = isLocal
   ? "https://script.google.com/macros/s/AKfycbwzH6dLYQ2sWGcIcahLpQJ4qSekwSM8MEAO2XJDxPiPutzkhyxovc9tHczaRmxtK84GSQ/exec"
   : "/.netlify/functions/leadProxy";
 
-  // // Dynamically load Courgette font from Google Fonts
-  // (function loadCourgetteFont() {
-  //   const link = document.createElement('link');
-  //   link.href = 'https://fonts.googleapis.com/css2?family=Courgette&display=swap';
-  //   link.rel = 'stylesheet';
-  //   link.type = 'text/css';
-  //   document.head.appendChild(link);
-  // })();
+  // Dynamically load Courgette font from Google Fonts
+  (function loadCourgetteFont() {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Courgette&family=Shadows+Into+Light&display=swap';
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    document.head.appendChild(link);
+  })();
 
 
 // Show Toast Notification with different styles for Lead Form and Admin

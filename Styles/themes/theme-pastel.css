@@ -7,8 +7,8 @@ body.theme-pastel {
   --input-bg: #f9f9f9;                /* ✅ Light pastel background for inputs */
   --search-bg: #F48FB1;               /* ✅ Teal pastel background for search input */
   --background-color: #FFCDD2;        /* ✅ Light page background (lavender-pink pastel) */
-  --border-color: #ddd;               /* ✅ Subtle border color for form elements/tables */
-  --table-hover: #EF9A9A; /* ✅ Table row hover effect (soft pink) */
+  --border-color: #F48FB1;               /* ✅ Subtle border color for form elements/tables */
+  --table-hover: #F48FB1; /* ✅ Table row hover effect (soft pink) */
   --nav-tab-bg: #f2d1d1;              /* ✅ Tab background (light pink) */
   --nav-tab-active-bg: #f9f9f9;       /* ✅ Active tab background (matches input) */
 }
@@ -176,11 +176,12 @@ body.theme-pastel .watermark {
   left: 15%;                                   /* ⬅️ Center horizontally */
   width: 65%;                                  /* 📏 Width across middle */
   height: 100%;                                /* 📐 Full height */
-  background-image: url('../../images/CML-Letterhead.png'); /* 🖼 Image path */
+  background-image: url('/images/NST-Letters.png'); /* 🖼 Image path */
   background-size: contain;                    /* ✨ Scale image properly */
   background-position: bottom;                 /* 🔽 Stick to bottom */
   background-repeat: no-repeat;                /* 🚫 No repeating */
-  opacity: 0;                                  /* 👻 Invisible by default */
+  opacity: 0.3;                                  /* 👻 Invisible by default */
+  /* outline: 1px dashed rgb(21, 7, 7); */
   pointer-events: none;                        /* 🚫 No interaction */
   z-index: 0;                                   /* 🔽 Behind everything */
 }
