@@ -7,7 +7,7 @@
   <style>
   </style>
 </head>
-<body class="theme-pastel">
+<body class="theme-test">
 <div class="watermark"></div>
 <!-- Notification Toasts -->
 
@@ -15,9 +15,9 @@
 
 <!-- Loader -->
 <div id="loadingOverlay" class="d-none">
-  <div class="text-center text-info">
-      <div class="spinner-border text-info" role="status"></div>
-      <p class="mt-2">Loading... Please wait...</p>
+  <div class="text-center">
+    <div class="spinner-border" role="status"></div>
+    <p class="mt-2">Loading... Please wait...</p>
   </div>
 </div>
 
@@ -27,7 +27,7 @@
     <h2 class="text-center mt-2">Ingredients Management</h2>
 
 <!-- Navigation Tabs -->
-<ul class="nav nav-tabs border-info" id="ingredientsTabs">
+<ul class="nav nav-tabs" id="ingredientsTabs">
   <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#search-ingredient">🔍 Search Ingredient</button></li>
   <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#add-ingredient">➕ Add Ingredient</button></li>
   <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#add-inventory">➕ Add Inventory</button></li>
@@ -43,7 +43,7 @@
     <th class="packagePrice"></th>
     <th class="onHand"></th>
     <th class="text-center">
-      <button type="button" class="btn btn-dark edit-button btn-sm d-none">Edit</button> <!-- hidden now -->
+      <button type="button" class="btn edit-button btn-sm d-none">Edit</button> <!-- hidden now -->
     </th>
   </tr>
 </template>
@@ -56,7 +56,8 @@
   <div class="input-group">
     <input type="text" class="form-control" id="searchInput" placeholder="🔍 search...">
       <div class="input-group-append">
-        <span class="input-group-text" id="searchCounter">🔍</span> 
+        <span class="counter" id="searchCounter" data-element="search-counter">🔍</span>
+        <span class="counter" id="totalCounter" data-element="search-counter">0</span>
       </div>
   </div>
   <table class="table table-hover">
@@ -112,7 +113,7 @@
 
       <!-- Actions -->
       <div class="row g-3 mt-1">
-        <div class="col-12"><button type="submit" class="btn btn-dark" id="add-ingredient-btn">💾 Save</button></div>
+        <div class="col-12"><button type="submit" class="btn" id="add-ingredient-btn">💾 Save</button></div>
       </div>
     </div> <!-- container -->
   </form>
@@ -149,8 +150,8 @@
     </div>
       <div class="row g-3 mt-1">
         <div class="col-12">
-          <button type="button" class="btn btn-dark" id="save-changes">💾 Save</button>
-          <button type="button" class="btn btn-dark" id="cancel-changes">Cancel</button>
+          <button type="button" class="btn" id="save-changes">💾 Save</button>
+          <button type="button" class="btn" id="cancel-changes">Cancel</button>
         </div>
       </div>
       <div id="reorderAlert" class="alert alert-danger mt-2 mb-2 d-none">
@@ -186,7 +187,7 @@
 
         <!-- Row Control Buttons -->
         <div class="col-md-6 d-flex align-items-end gap-2">
-          <button type="button" class="btn btn-dark btn-sm add-inventory-btn" id="addIngredientRowBtn">➕ Add Ingredient</button>
+          <button type="button" class="btn btn-sm add-inventory-btn" id="addIngredientRowBtn">➕ Add Ingredient</button>
           <button type="button" class="remove-ingredient-row btn btn-danger btn-sm" style="display: none;">🗑️ Remove</button>
         </div>
       </div>
@@ -194,7 +195,7 @@
 
           <!-- Save Button -->
           <div class="mt-3 text-start mb-5">
-            <button type="submit" class="btn btn-dark btn-sm" id="save-inventory-btn">💾 Save Inventory</button>
+            <button type="submit" class="btn btn-sm" id="save-inventory-btn">💾 Save Inventory</button>
           </div>
           <!-- Reorder Alert -->
           <div id="reorder-alert" class="alert alert-warning d-none mt-3">

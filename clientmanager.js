@@ -58,14 +58,14 @@ function search() {
     if (searchInput === "") {
       searchCounter.style.display = "none";
     } else {
-      searchCounter.textContent = `${resultsArray.length} Clients Found`;
+      searchCounter.textContent = `${resultsArray.length} Clients Found of`;
       searchCounter.style.display = "inline-block";
     }
   }
 
   if (searchResultsBox) {
     searchResultsBox.innerHTML = "";
-    totalCounter.textContent = `${data.length} Total Client`;
+    totalCounter.textContent = `${data.length} Total Clients`;
 
     if (resultsArray.length === 0) {
       searchCounter.textContent = "🔍";
@@ -80,7 +80,7 @@ function search() {
         tr.dataset.clientid = r[0];
 
         const deleteBtn = tr.querySelector(".before-delete-button");
-        const confirmBtn = tr.querySelector(".delete-confirm-button");
+        const confirmBtn = tr.querySelector(".delete-button");
 
         deleteBtn.dataset.clientid = r[0];
         confirmBtn.dataset.clientid = r[0];

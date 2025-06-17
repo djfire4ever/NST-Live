@@ -47,48 +47,44 @@ function setDataForSearch() {
 function search() {
   const inputEl = document.getElementById("searchInput");
   const box = document.getElementById("searchResults");
+  const searchCounter = document.getElementById("searchCounter");
+  const totalCounter = document.getElementById("totalCounter");
+
   if (!inputEl || !box) return;
-
-  let counterContainer = document.getElementById("counterContainer");
-  if (!counterContainer) {
-    counterContainer = document.createElement("div");
-    counterContainer.id = "counterContainer";
-    counterContainer.className = "d-inline-flex gap-3 align-items-center ms-3";
-    inputEl.parentNode.insertBefore(counterContainer, inputEl.nextSibling);
-  }
-
-  let searchCounter = document.getElementById("searchCounter");
-  if (!searchCounter) {
-    searchCounter = document.createElement("span");
-    searchCounter.id = "searchCounter";
-    searchCounter.className = "px-2 py-1 border rounded fw-bold bg-dark text-info";
-    counterContainer.appendChild(searchCounter);
-  }
-
-  let totalCounter = document.getElementById("totalCounter");
-  if (!totalCounter) {
-    totalCounter = document.createElement("span");
-    totalCounter.id = "totalCounter";
-    totalCounter.className = "px-2 py-1 border rounded fw-bold bg-dark text-info";
-    searchCounter.insertAdjacentElement("afterend", totalCounter);
-  }
 
   toggleLoader(true);
 
-  const terms = inputEl.value.toLowerCase().trim().split(/\s+/);
-  const filtered = terms[0] === ""
+  const query = inputEl.value.toLowerCase().trim();
+  const terms = query.split(/\s+/);
+
+  const filtered = query === ""
     ? []
     : invoicedata.filter(row =>
         terms.every(word =>
-          [0, 1, 2, 3, 4, 12].some(i => row[i]?.toString().toLowerCase().includes(word))
+          [0, 1, 2, 3, 4, 12].some(i =>
+            row[i]?.toString().toLowerCase().includes(word)
+          )
         )
       );
 
-  searchCounter.textContent = terms[0] === "" ? "🔍" : `${filtered.length} Invoices Found`;
-  totalCounter.textContent = `Total Invoices: ${invoicedata.length}`;
-  box.innerHTML = "";
+  // ✅ Update counters
+  if (searchCounter) {
+    if (query === "") {
+      searchCounter.style.display = "none";
+    } else {
+      searchCounter.textContent = filtered.length === 0 ? "🔍" : `${filtered.length} Invoices Found of`;
+      searchCounter.style.display = "inline-block";
+    }
+  }
 
+  if (totalCounter) {
+    totalCounter.textContent = `Total Invoices: ${invoicedata.length}`;
+  }
+
+  // ✅ Render results
+  box.innerHTML = "";
   const template = document.getElementById("rowTemplate").content;
+
   filtered.forEach(r => {
     const row = template.cloneNode(true);
     const tr = row.querySelector("tr");
@@ -98,31 +94,30 @@ function search() {
     tr.querySelector(".firstName").textContent = r[3];
     tr.querySelector(".lastName").textContent = r[4];
     tr.querySelector(".balanceDue").textContent = formatCurrency(r[11]);
+
     const statusCell = tr.querySelector(".status");
-      statusCell.innerHTML = "";
+    statusCell.innerHTML = "";
 
-      const badge = document.createElement("span");
-      badge.textContent = r[12];
-      badge.classList.add("badge", "fw-bold", "fs-6");
+    const badge = document.createElement("span");
+    badge.textContent = r[12];
+    badge.classList.add("badge", "fw-bold", "fs-6");
 
-      switch (r[12]) {
-        case "Paid":
-          badge.classList.add("bg-success", "text-dark");
-          break;
-        case "Unpaid":
-          badge.classList.add("bg-danger", "text-dark");
-          break;
-        case "Partial":
-          badge.classList.add("bg-warning", "text-dark");
-          break;
-        default:
-          badge.classList.add("bg-secondary", "text-dark");
-          break;
-      }
+    switch (r[12]) {
+      case "Paid":
+        badge.classList.add("bg-success", "text-dark");
+        break;
+      case "Unpaid":
+        badge.classList.add("bg-danger", "text-dark");
+        break;
+      case "Partial":
+        badge.classList.add("bg-warning", "text-dark");
+        break;
+      default:
+        badge.classList.add("bg-secondary", "text-dark");
+        break;
+    }
 
-      statusCell.appendChild(badge);
-
-
+    statusCell.appendChild(badge);
     tr.dataset.logid = r[0];
     box.appendChild(row);
   });

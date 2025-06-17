@@ -7,7 +7,7 @@
   <style>
   </style>
 </head>
-<body class="theme-dark">
+<body class="theme-classic">
 <div class="watermark"></div>
 <!-- Notification Toasts -->
 
@@ -15,16 +15,16 @@
 
 <!-- Loader -->
 <div id="loadingOverlay" class="d-none">
-  <div class="text-center text-info">
-      <div class="spinner-border text-info" role="status"></div>
-      <p class="mt-2">Loading... Please wait...</p>
+  <div class="text-center">
+    <div class="spinner-border" role="status"></div>
+    <p class="mt-2">Loading... Please wait...</p>
   </div>
 </div>
 
 <!-- Invoice Management Section -->
 <section class="text-center text-sm-start">
 <div class="container" data-element="main-container">
-  <h2 class="text-center" data-element="page-title">Inventory Management</h2>
+  <h2 class="text-center" data-element="page-title">Invoice Management</h2>
 
 <!-- Navigation Tabs -->
 <ul class="nav nav-tabs border-info" id="invoiceTabs">
@@ -56,7 +56,8 @@
   <div class="input-group my-3">
     <input type="text" class="form-control" id="searchInput" placeholder="🔍 search...">
     <div class="input-group-append">
-      <span class="input-group-text" id="searchCounter">🔍</span>
+      <span class="counter" id="searchCounter" data-element="search-counter">🔍</span>
+      <span class="counter" id="totalCounter" data-element="search-counter">0</span>
     </div>
   </div>
 

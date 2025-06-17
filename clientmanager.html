@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client Manager</title>
 </head>
-<body class="theme-pastel">
+<!-- <body class="theme-test"> -->
 
 <!-- 💧 Watermark -->
 <div class="watermark"></div>
@@ -15,8 +15,8 @@
 
 <!-- ⏳ Loader -->
 <div id="loadingOverlay" class="d-none">
-  <div class="text-center text-info">
-    <div class="spinner-border text-info" role="status"></div>
+  <div class="text-center">
+    <div class="spinner-border" role="status"></div>
     <p class="mt-2">Loading... Please wait...</p>
   </div>
 </div>
@@ -30,8 +30,8 @@
     <th class="nickName"></th>
     <th class="text-center">
       <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger delete-confirm-button btn-sm d-none">Confirm</button>
-        <button type="button" class="btn btn-dark btn-sm before-delete-button" data-button-state="delete">Delete</button>
+        <button type="button" class="btn btn-sm delete-button d-none">Confirm</button>
+        <button type="button" class="btn btn-sm before-delete-button" data-button-state="delete">Delete</button>
       </div>
     </th>
   </tr>
@@ -44,7 +44,7 @@
   <h2 class="text-center" data-element="page-title">Client Management</h2>
 
 <!-- 📍 Navigation Tabs -->
-  <ul class="nav nav-tabs border-info" id="clientTabs">
+  <ul class="nav nav-tabs" id="clientTabs">
     <li class="nav-item">
       <button class="nav-link active" data-element="nav-tab-button" data-bs-toggle="tab" data-bs-target="#tab-search">🔍 Search Client</button>
     </li>
@@ -68,7 +68,7 @@
       <span class="counter" id="totalCounter" data-element="search-counter">0</span>
     </div>
   </div>
-  <table class="table table-hover my-custom-table" data-element="results-table">
+  <table class="table table-hover" data-element="results-table">
     <thead>
       <tr>
         <th>Phone #</th>
@@ -88,13 +88,13 @@
   <form id="addClientForm">
     <div class="container"></div>
       <div class="row g-3">
-        <div class="col-md-2 col-lg-2"><label>Phone Number</label><input type="tel" class="form-control" id="clientID"></div>
+        <div class="col-md-2 col-lg-2"><label>Phone Number</label><input type="tel" class="form-control" id="clientID" placeholder="Phone Number"></div>
         <div class="col-md-4 col-lg-4"><label>Email</label><input type="email" class="form-control" id="email"></div>
       </div>
       <div class="row g-3">
         <div class="col-md-2 col-lg-2"><label>First Name</label><input type="text" class="form-control" id="firstName"></div>
         <div class="col-md-2 col-lg-2"><label>Last Name</label><input type="text" class="form-control" id="lastName"></div>
-        <div class="col-md-2 col-lg-2"><label>Nick Name</label><input type="text" class="form-control" id="nickName"></div>
+        <div class="col-md-2 col-lg-2"><label>Nick Name</label><input type="text" class="form-control" id="nickName" placeholder="Nick Name"></div>
       </div>
       <div class="row g-3">
         <div class="col-md-6 col-lg-6"><label>Street</label><input type="text" class="form-control" id="street"></div>
@@ -105,7 +105,7 @@
         <div class="col-md-2 col-lg-2 "><label>Zip</label><input type="number" class="form-control" id="zip"></div>
       </div>
       <div class="row g-3 mt-2">
-        <div class="col-sm-2"><button type="submit" class="btn btn-dark">📅 Save</button></div>
+        <div class="col-sm-2"><button type="submit" class="btn">📅 Save</button></div>
       </div>
     </div>
   </div>
@@ -135,7 +135,7 @@
         <div class="col-md-2 col-lg-2"><label>Zip</label><input type="number" class="form-control" id="edit-zip"></div>
       </div>
       <div class="row g-3 mt-2">
-        <div class="col-sm-2"><button type="button" class="btn btn-dark" id="save-changes">📅 Save</button></div>
+        <div class="col-sm-2"><button type="button" class="btn" id="save-changes">📅 Save</button></div>
       </div>
   </form>
   </div>
