@@ -6,9 +6,7 @@
   <title>Leads Manager</title>
   <script defer src="leadsform.js"></script>
 </head>
-<body class="theme-dark">
-<!-- <body class="bg-black text-white"> -->
-
+<body class="theme-pastel">
 <div class="watermark"></div>
 
 <!-- Toasts -->
@@ -36,7 +34,7 @@
           <input type="text" id="searchBar" class="form-control" placeholder="Search leads...">
         </div>
         <div class="col-md-4">
-          <button class="btn w-100" onclick="filterLeads()">Apply</button>
+          <button class="btn" onclick="filterLeads()">Apply</button>
         </div>
       </div>
     </div>
@@ -111,8 +109,8 @@
 <script src="config.js"></script>
 
 <script>
-
-  // ✅ Listen for refresh signal
+  
+// ✅ Listen for refresh signal
 window.addEventListener("message", function(event) {
   if (event.origin !== window.location.origin) return; // Safety check (optional but good)
   if (event.data && event.data.action === "refreshLeads") {

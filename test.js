@@ -243,41 +243,17 @@ document.getElementById("searchResults")?.addEventListener("click", (event) => {
 function search() {
   const inputEl = document.getElementById("searchInput");
   const resultsBox = document.getElementById("searchResults");
-  const query = inputEl.value.toLowerCase().trim();
+  const searchCounter = document.getElementById("searchCounter");
+  const totalCounter = document.getElementById("totalCounter");
 
-  // Ensure counter container exists next to input
-  let counterContainer = document.getElementById("counterContainer");
-  if (!counterContainer) {
-    counterContainer = document.createElement("div");
-    counterContainer.id = "counterContainer";
-    counterContainer.className = "d-inline-flex gap-3 align-items-center ms-3";
-    inputEl.insertAdjacentElement("afterend", counterContainer);
-  }
-
-  // Helper to get or create individual counters
-  const getOrCreateCounter = (id, text = "") => {
-    let el = document.getElementById(id);
-    if (!el) {
-      el = document.createElement("span");
-      el.id = id;
-      el.className = "px-2 py-1 border rounded fw-bold bg-dark text-info";
-      el.textContent = text;
-      counterContainer.appendChild(el);
-    }
-    return el;
-  };
-
-  const searchCounter = getOrCreateCounter("searchCounter");
-  const totalCounter = getOrCreateCounter("totalCounter");
+  if (!inputEl || !resultsBox) return;
 
   toggleLoader(true);
 
+  const query = inputEl.value.toLowerCase().trim();
   const words = query.split(/\s+/);
-  const columns = [0, 1, 2, 3, 4, 5, 6]; // Columns to search in your ingredientData rows
 
-  // Filter ingredientData based on all words matching at least one of the specified columns
   const keysToSearch = ["ingredientID", "ingredientName", "packagePrice", "supplier", "onHand"];
-
   const results = query === "" ? [] : ingredientData.filter(row =>
     words.every(word =>
       keysToSearch.some(key =>
@@ -286,11 +262,21 @@ function search() {
     )
   );
 
-  // Update counters
-  searchCounter.textContent = query === "" ? "🔍" : `${results.length} Ingredients Found`;
-  totalCounter.textContent = `Total Ingredients: ${ingredientData.length}`;
+  // ✅ Counter logic
+  if (searchCounter) {
+    if (query === "") {
+      searchCounter.style.display = "none";
+    } else {
+      searchCounter.textContent = results.length === 0 ? "🔍" : `${results.length} Ingredients Found of`;
+      searchCounter.style.display = "inline-block";
+    }
+  }
 
-  // Render search results
+  if (totalCounter) {
+    totalCounter.textContent = `Total Ingredients: ${ingredientData.length}`;
+  }
+
+  // ✅ Render results
   resultsBox.innerHTML = "";
   const template = document.getElementById("rowTemplate").content;
 
