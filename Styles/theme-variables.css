@@ -90,3 +90,35 @@ body.theme-classic {
   --alt-button-text-color: var(--alt-text-color);
   --alt-button-border-color: var(--border-color);
 }
+
+/* =======================================
+   🎨 THEME VARIABLES: NST Mode
+========================================== */
+body.theme-NST {
+  --main-color: #F2EEE5;
+  --text-color: #DFB1B1;
+  --border-color: #000;
+  --alt-color: #663300;
+  --alt-text-color: #228B22;
+  --alt-border-color: #228B22;
+
+  --input-bg: var(--main-color);
+  --search-bg: transparent;
+  --table-hover: var(--alt-color);
+
+  --button-color: var(--main-color);
+  --button-text-color: var(--text-color);
+  --button-border-color: var(--border-color);
+  --alt-button-color: var(--alt-color);
+  --alt-button-text-color: var(--alt-text-color);
+  --alt-button-border-color: var(--border-color);
+}
+    /* :root {
+      --bs-primary: #8B4513;
+      --bs-secondary: #A0522D;
+      --bs-success: #228B22;
+      --bs-warning: #D2691E;
+      --bs-danger: #A0522D;
+      --bs-light: #F5F5DC;
+      --bs-dark: #663300;
+    } */

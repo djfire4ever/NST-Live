@@ -445,6 +445,6 @@ async function showDebugInfo() {
 
 // Automatically check version on load
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(checkBackendVersion, 3000); // delay 1 second
+  setTimeout(checkBackendVersion, 3000); // delay 3 second
 });
 
